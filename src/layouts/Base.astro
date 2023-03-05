@@ -1,0 +1,54 @@
+---
+import '$styles/global.scss';
+
+import Navigation from '$components/Navigation.svelte';
+import Footer from '$components/Footer.svelte';
+
+const {title, description} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{title}</title>
+	  <meta charset="UTF-8" />
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	  <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#F04855" />
+	  <meta property="og:title" content={title} />
+    <meta property="og:image" content="/embed.png" />
+    <meta property="og:description" content={description} />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body class="min-h-screen grid">
+    {/* <script> */}
+    {/*     import Swup from 'swup'; */}
+    {/*     import SwupHeadPlugin from '@swup/head-plugin'; */}
+    {/*     import SwupSlideTheme from '@swup/slide-theme' */}
+    {/*     import SwupPreloadPlugin from '@swup/preload-plugin'; */}
+    {/*     import SwupA11yPlugin from '@swup/a11y-plugin'; */}
+
+    {/*     // Would be nice if I could speed up the slide transition. */}
+    {/*     const swup = new Swup({ */}
+    {/*         plugins: [new SwupA11yPlugin(), new SwupPreloadPlugin(), new SwupSlideTheme({ mainElement: '.swup-slide' }), new SwupHeadPlugin()], */}
+    {/*         containers: [".swup"] */}
+    {/*     }); */}
+    {/* </script> */}
+
+    <Navigation pathname={Astro.url.pathname} />
+    {/* Need to do this or else main page breaks. */}
+    <div id="content">
+      <slot />
+    </div>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  body {
+    grid-template-rows: auto 1fr auto;
+  }
+</style>

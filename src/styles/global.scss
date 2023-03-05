@@ -1,0 +1,39 @@
+// This file just imports the fonts and defines some defaults.
+
+@import "./fonts.css";
+
+$red-400: #f87171;
+$stone-800: #292524;
+$scroll-size: 5px;
+
+:root {
+    scrollbar-color: $red-400 $stone-800;
+    scrollbar-width: $scroll-size;
+}
+
+// Doesn't quite look right... I need to change either the color, geometry or both.
+::-webkit-scrollbar {
+    width: $scroll-size;
+    height: $scroll-size;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $red-400;
+}
+
+::-webkit-scrollbar-track {
+    background: $stone-800;
+}
+
+body {
+  @apply p-0 m-auto w-screen text-center text-base leading-normal break-words bg-stone-800 text-red-50;
+  font-family: Fira Code, sans-serif;
+}
+
+img {
+  @apply max-w-full h-auto;
+}
+
+.site-view {
+  @apply w-11/12 md:w-2/3;
+}

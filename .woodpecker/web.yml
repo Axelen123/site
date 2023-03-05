@@ -1,0 +1,19 @@
+branches: [ci, master, deploy]
+pipeline:
+  build:
+    image: node:18-alpine
+    commands:
+      - npm ci
+      - npm run build
+  deploy:
+    image: alpine:3
+    commands:
+      - apk add --no-cache rsync openssh age
+      - echo $${AGE_KEY} > ./deploy/age_key_priv
+      - age --decrypt -i ./deploy/age_key_priv -o ./deploy/ssh_key_dec ./deploy/ssh_key
+      - chmod 600 ./deploy/ssh_key_dec
+      - rsync -avz --delete -e "ssh -p 2222 -i $PWD/deploy/ssh_key_dec -o UserKnownHostsFile=$PWD/deploy/known_hosts" dist/ www@192.168.128.90:/www
+      - rm -rf deploy
+    secrets: [age_key]
+    when:
+      branch: [ci, deploy]
