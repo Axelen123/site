@@ -47,8 +47,6 @@ const links: Link[] = [
 </nav>
 
 <style lang="scss">
-  @use "./edge.scss";
-
   .site-selected {
     @apply font-semibold underline underline-offset-4 decoration-red-500 decoration-4;
   }

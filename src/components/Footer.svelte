@@ -22,7 +22,3 @@ const links: Link[] = [
     <a class=" m-auto text-red-100" href={link.url}>{link.name}</a>
   {/each}
 </footer>
-
-<style lang="scss">
-  @use "./edge.scss";
-</style>
