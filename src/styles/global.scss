@@ -6,6 +6,10 @@ $red-400: #f87171;
 $stone-800: #292524;
 $scroll-size: 5px;
 
+* {
+  box-sizing: border-box;
+}
+
 :root {
     scrollbar-color: $red-400 $stone-800;
     scrollbar-width: $scroll-size;

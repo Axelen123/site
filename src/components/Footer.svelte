@@ -19,7 +19,7 @@ const links: Link[] = [
 
 <footer class="w-screen h-14 bg-stone-700 flex justify-between">
   {#each links as link}
-    <a class="site-item-size m-auto text-red-100" href={link.url}>{link.name}</a>
+    <a class=" m-auto text-red-100" href={link.url}>{link.name}</a>
   {/each}
 </footer>
 
