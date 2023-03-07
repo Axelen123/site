@@ -24,23 +24,23 @@ const {title, description} = Astro.props;
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>
   <body class="min-h-screen grid">
-    {/* <script> */}
-    {/*     import Swup from 'swup'; */}
-    {/*     import SwupHeadPlugin from '@swup/head-plugin'; */}
-    {/*     import SwupSlideTheme from '@swup/slide-theme' */}
-    {/*     import SwupPreloadPlugin from '@swup/preload-plugin'; */}
-    {/*     import SwupA11yPlugin from '@swup/a11y-plugin'; */}
+    <!-- <script> 
+        import Swup from 'swup'; 
+        import SwupHeadPlugin from '@swup/head-plugin'; 
+        import SwupSlideTheme from '@swup/slide-theme' 
+        import SwupPreloadPlugin from '@swup/preload-plugin'; 
+        import SwupA11yPlugin from '@swup/a11y-plugin'; 
 
-    {/*     // Would be nice if I could speed up the slide transition. */}
-    {/*     const swup = new Swup({ */}
-    {/*         plugins: [new SwupA11yPlugin(), new SwupPreloadPlugin(), new SwupSlideTheme({ mainElement: '.swup-slide' }), new SwupHeadPlugin()], */}
-    {/*         containers: [".swup"] */}
-    {/*     }); */}
-    {/* </script> */}
+        // Would be nice if I could speed up the slide transition. 
+        const swup = new Swup({ 
+            plugins: [new SwupA11yPlugin(), new SwupPreloadPlugin(), new SwupSlideTheme({ mainElement: '.swup-slide' }), new SwupHeadPlugin()], 
+            containers: [".swup"] 
+        }); 
+    </script>  -->
 
     <Navigation pathname={Astro.url.pathname} />
-    {/* Need to do this or else main page breaks. */}
-    <div id="content">
+    <!-- Need to do this or else main page breaks.  -->
+    <div id="content" >
       <slot />
     </div>
     <Footer />
