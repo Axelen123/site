@@ -1,5 +1,8 @@
-branches: [ci, master, deploy]
-pipeline:
+when:
+  branch: [master, ci, deploy]
+  event: push
+
+steps:
   build:
     image: node:18-alpine
     commands:
@@ -12,7 +15,7 @@ pipeline:
       - echo $${AGE_KEY} > ./deploy/age_key_priv
       - age --decrypt -i ./deploy/age_key_priv -o ./deploy/ssh_key_dec ./deploy/ssh_key
       - chmod 600 ./deploy/ssh_key_dec
-      - rsync -avz --delete -e "ssh -p 2222 -i $PWD/deploy/ssh_key_dec -o UserKnownHostsFile=$PWD/deploy/known_hosts" dist/ www@192.168.128.90:/www
+      - rsync -avz --delete -e "ssh -p 2222 -i $PWD/deploy/ssh_key_dec -o UserKnownHostsFile=$PWD/deploy/known_hosts" dist/ www@192.168.30.215:/www/site
       - rm -rf deploy
     secrets: [age_key]
     when:
