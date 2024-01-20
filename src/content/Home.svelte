@@ -7,7 +7,7 @@
   <header class="h-96 flex justify-start">
     <div class="my-auto flex flex-col gap-2">
       <h1 class="text-4xl md:text-6xl font-semibold">I am <span class="font-bold text-red-400">Axel.</span></h1>
-      <h2 class="max-w-max text-xs md:text-sm text-red-200">@ax333l:chat.axelen.xyz / Ax333l#9147</h2>
+      <h2 class="max-w-max text-xs md:text-sm text-red-200">@ax333l:chat.axelen.xyz</h2>
     </div>
   </header>
 
